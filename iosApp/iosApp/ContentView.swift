@@ -6,23 +6,32 @@ struct ContentView: View {
     
     @ObservedObject private var pickerVM = PickerViewModel()
     @ObservedObject private var userVM = UserViewModel()
+    @ObservedObject private var asyncVM = MockAsyncViewModel()
     
 	var body: some View {
         
         GeometryReader { geometry in
             
             VStack {
+                
+                List(asyncVM.band.members, id: \.name) { member in
+                    Text(member.name)
+                }
+                                
                 UsernameBindingView(userVM: userVM)
                     .padding()
                 
                 Spacer()
                 
                 Rectangle()
-                    .background(Color.red)
                     .frame(width: 100, height: 100, alignment: .center)
+                    .foregroundColor(Color.red)
                     .position(x: (geometry.size.width * 0.5) + pickerVM.xOffset, y: 100)
             
                 LeftRightControls(viewModel: pickerVM)
+            }
+            .onAppear {
+                asyncVM.load()
             }
         }
 	}

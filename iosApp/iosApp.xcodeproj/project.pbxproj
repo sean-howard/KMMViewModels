@@ -13,6 +13,7 @@
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		F6AEFD912805BAB300E6882C /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEFD902805BAB300E6882C /* PickerViewModel.swift */; };
 		F6AEFD932805C0E200E6882C /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEFD922805C0E200E6882C /* UserViewModel.swift */; };
+		F6AEFD952805C3E600E6882C /* MockAsyncCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEFD942805C3E600E6882C /* MockAsyncCall.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,7 @@
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6AEFD902805BAB300E6882C /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
 		F6AEFD922805C0E200E6882C /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		F6AEFD942805C3E600E6882C /* MockAsyncCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAsyncCall.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* ContentView.swift */,
+				F6AEFD942805C3E600E6882C /* MockAsyncCall.swift */,
 				F6AEFD902805BAB300E6882C /* PickerViewModel.swift */,
 				F6AEFD922805C0E200E6882C /* UserViewModel.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
@@ -191,6 +194,7 @@
 				F6AEFD912805BAB300E6882C /* PickerViewModel.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				F6AEFD932805C0E200E6882C /* UserViewModel.swift in Sources */,
+				F6AEFD952805C3E600E6882C /* MockAsyncCall.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,9 +10,5 @@ import Foundation
 
 class UserViewModel: ObservableObject {
     
-    var username: String = "" {
-        willSet {
-            objectWillChange.send()
-        }
-    }
+    @Published var username: String = ""
 }
