@@ -11,7 +11,7 @@
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
-		F6AEFD912805BAB300E6882C /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEFD902805BAB300E6882C /* PickerViewModel.swift */; };
+		F671DEE12806DCCA009AE1C6 /* ObservingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F671DEE02806DCCA009AE1C6 /* ObservingViewModel.swift */; };
 		F6AEFD932805C0E200E6882C /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEFD922805C0E200E6882C /* UserViewModel.swift */; };
 		F6AEFD952805C3E600E6882C /* MockAsyncCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AEFD942805C3E600E6882C /* MockAsyncCall.swift */; };
 /* End PBXBuildFile section */
@@ -36,7 +36,7 @@
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F6AEFD902805BAB300E6882C /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
+		F671DEE02806DCCA009AE1C6 /* ObservingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservingViewModel.swift; sourceTree = "<group>"; };
 		F6AEFD922805C0E200E6882C /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		F6AEFD942805C3E600E6882C /* MockAsyncCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAsyncCall.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,8 +83,8 @@
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				F6AEFD942805C3E600E6882C /* MockAsyncCall.swift */,
-				F6AEFD902805BAB300E6882C /* PickerViewModel.swift */,
 				F6AEFD922805C0E200E6882C /* UserViewModel.swift */,
+				F671DEDD2806DC9C009AE1C6 /* Observable */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
@@ -97,6 +97,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F671DEDD2806DC9C009AE1C6 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				F671DEE02806DCCA009AE1C6 /* ObservingViewModel.swift */,
+			);
+			path = Observable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,7 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6AEFD912805BAB300E6882C /* PickerViewModel.swift in Sources */,
+				F671DEE12806DCCA009AE1C6 /* ObservingViewModel.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				F6AEFD932805C0E200E6882C /* UserViewModel.swift in Sources */,
 				F6AEFD952805C3E600E6882C /* MockAsyncCall.swift in Sources */,

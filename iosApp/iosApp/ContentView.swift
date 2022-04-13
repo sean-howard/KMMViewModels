@@ -2,39 +2,46 @@ import SwiftUI
 import shared
 
 struct ContentView: View {
-	let greet = Greeting().greeting()
     
-    @ObservedObject private var pickerVM = PickerViewModel()
-    @ObservedObject private var userVM = UserViewModel()
-    @ObservedObject private var asyncVM = MockAsyncViewModel()
+//    @ObservedObject private var pickerVM = PickerViewModel()
+//    @ObservedObject private var userVM = UserViewModel()
+//    @ObservedObject private var asyncVM = MockAsyncViewModel()
+    
+    let viewModel = PickerViewModel()
     
 	var body: some View {
         
-        GeometryReader { geometry in
-            
-            VStack {
+        ObservingView(publisher: asPublisher(viewModel.xOffset)) { output in
+            GeometryReader { geometry in
                 
-                List(asyncVM.band.members, id: \.name) { member in
-                    Text(member.name)
+                VStack {
+                   
+                    Rectangle()
+                        .frame(width: 100, height: 100, alignment: .center)
+                        .foregroundColor(Color.red)
+                        .position(x: (geometry.size.width * 0.5) + CGFloat(output.floatValue), y: 100)
+                        .animation(.default, value: output.floatValue)
+                
+                    LeftRightControls(viewModel: viewModel)
+                    Text(String(format: "%0.0f", output.floatValue))
                 }
-                                
-                UsernameBindingView(userVM: userVM)
-                    .padding()
-                
-                Spacer()
-                
-                Rectangle()
-                    .frame(width: 100, height: 100, alignment: .center)
-                    .foregroundColor(Color.red)
-                    .position(x: (geometry.size.width * 0.5) + pickerVM.xOffset, y: 100)
-            
-                LeftRightControls(viewModel: pickerVM)
-            }
-            .onAppear {
-                asyncVM.load()
             }
         }
 	}
+}
+
+struct ListView: View {
+    
+    var asyncVM: MockAsyncViewModel
+    
+    var body: some View {
+        List(asyncVM.band.members, id: \.name) { member in
+            Text(member.name)
+        }
+        .onAppear {
+            asyncVM.load()
+        }
+    }
 }
 
 struct UsernameBindingView: View {
@@ -51,30 +58,24 @@ struct UsernameBindingView: View {
 
 struct LeftRightControls: View {
     
-    @ObservedObject var viewModel: PickerViewModel
+    var viewModel: PickerViewModel
     
     var body: some View {
         VStack {
             HStack {
                 Button("Left") {
-                    withAnimation {
-                        viewModel.decrement()
-                    }
-                    
+                    viewModel.decrement()
                 }
                 .buttonStyle(.bordered)
                 
                 Button("Right") {
-                    withAnimation {
-                        viewModel.increment()
-                    }
+                    viewModel.increment()
                 }
                 .buttonStyle(.bordered)
             }
-            
-            Text(String(format: "%.0f", viewModel.xOffset))
         }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

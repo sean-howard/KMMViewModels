@@ -1,11 +1,12 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    id("com.rickclephas.kmp.nativecoroutines") version "0.11.4"
 }
 
 kotlin {
     android()
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -17,7 +18,14 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                // Coroutines
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1-new-mm-dev2")
+                implementation("io.ktor:ktor-client-core:1.6.8")
+            }
+        }
+
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
@@ -52,9 +60,5 @@ android {
     defaultConfig {
         minSdk = 21
         targetSdk = 32
-    }
-
-    buildFeatures {
-        compose = true
     }
 }
