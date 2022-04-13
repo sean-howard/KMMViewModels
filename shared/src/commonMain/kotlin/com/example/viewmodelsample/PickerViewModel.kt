@@ -1,7 +1,6 @@
 package com.example.viewmodelsample
 
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.distinctUntilChanged
 
 class PickerViewModel {
 

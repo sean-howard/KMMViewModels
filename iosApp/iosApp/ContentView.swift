@@ -2,20 +2,20 @@ import SwiftUI
 import shared
 
 struct ContentView: View {
-    
-//    @ObservedObject private var pickerVM = PickerViewModel()
+
 //    @ObservedObject private var userVM = UserViewModel()
-//    @ObservedObject private var asyncVM = MockAsyncViewModel()
+    @ObservedObject private var asyncVM = MockAsyncViewModel()
     
-    let viewModel = PickerViewModel()
+//    let viewModel = PickerViewModel()
+//    let asyncVM = MockBandViewModel()
     
 	var body: some View {
-        
+       
+        /*
         ObservingView(publisher: asPublisher(viewModel.xOffset)) { output in
             GeometryReader { geometry in
                 
                 VStack {
-                   
                     Rectangle()
                         .frame(width: 100, height: 100, alignment: .center)
                         .foregroundColor(Color.red)
@@ -26,20 +26,23 @@ struct ContentView: View {
                     Text(String(format: "%0.0f", output.floatValue))
                 }
             }
-        }
-	}
+        }*/
+        
+        
+        ListView(asyncVM: asyncVM)
+            .onAppear {
+                asyncVM.load()
+            }
+    }
 }
 
 struct ListView: View {
-    
-    var asyncVM: MockAsyncViewModel
-    
+
+    @ObservedObject var asyncVM: MockAsyncViewModel
+
     var body: some View {
         List(asyncVM.band.members, id: \.name) { member in
             Text(member.name)
-        }
-        .onAppear {
-            asyncVM.load()
         }
     }
 }
